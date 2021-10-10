@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: cbe0a377666102d468f3d4040567e19e
+  - enabled: 1
+    path: Assets/Scenes/Airport.unity
+    guid: 72e7fd3624ad10740929254f6821eacd
+  - enabled: 1
+    path: Assets/Scenes/BakerStreet.unity
+    guid: 0fd6d9e189457784f8bcdb3e7195f98c
+  - enabled: 1
+    path: Assets/Scenes/GromeStreet.unity
+    guid: 7625f4b3d93c3844ab2a44d8b9558a6e
   m_configObjects: {}
