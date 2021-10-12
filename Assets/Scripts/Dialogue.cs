@@ -8,8 +8,10 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
     private int index;
+    public DialogueTrigger dialogueTrigger;
     public float typingSpeed;
     public GameObject continueButton;
+    public GameObject dialoguePanel;
 
     void Start()
     {
@@ -18,6 +20,11 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.E) && dialogueTrigger.colliderCheck == true)
+        {
+            dialoguePanel.SetActive(true);
+        }
+
         if(textDisplay.text == sentences[index])
         {
             continueButton.SetActive(true);
@@ -36,6 +43,11 @@ public class Dialogue : MonoBehaviour
     public void NextSentence()
     {
         continueButton.SetActive(false);
+
+        /*if(index == sentences.Length)
+        {
+            GameObject.Find("DialogueManager").transform.GetChild(0).gameObject.SetActive(false);
+        }*/
         
         if(index < sentences.Length - 1)
         {
