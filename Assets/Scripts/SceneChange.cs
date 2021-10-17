@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
+	public static bool TravelMenu = false;
+	public GameObject travelMenuUI;
+
 	public void ChangeScene(string sceneName)
 	{
 		if(Time.timeScale == 0)
@@ -13,6 +16,14 @@ public class SceneChange : MonoBehaviour
 		}
 		SceneManager.LoadScene (sceneName);
 	}
+
+	public void Resume()
+    {
+        travelMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        TravelMenu = false;
+    }
+
 	public void Exit()
 	{
 		Application.Quit ();

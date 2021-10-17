@@ -20,6 +20,8 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
+        //print(index + "   " + (sentences.Length - 1));
+
         if(Input.GetKeyDown(KeyCode.E) && dialogueTrigger.colliderCheck == true)
         {
             dialoguePanel.SetActive(true);
@@ -42,12 +44,15 @@ public class Dialogue : MonoBehaviour
 
     public void NextSentence()
     {
-        continueButton.SetActive(false);
+        //continueButton.SetActive(false);
 
-        /*if(index == sentences.Length)
+        if(index == sentences.Length - 1)
         {
-            GameObject.Find("DialogueManager").transform.GetChild(0).gameObject.SetActive(false);
-        }*/
+            GameObject.FindWithTag("Dialogue").gameObject.SetActive(false);
+            //print("Works");
+            index = 0;
+            return;
+        }
         
         if(index < sentences.Length - 1)
         {

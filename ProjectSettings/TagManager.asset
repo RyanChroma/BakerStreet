@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - music
+  - Dialogue
   layers:
   - Default
   - TransparentFX
