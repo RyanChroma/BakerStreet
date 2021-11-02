@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AZHouse.unity
     guid: fc29e31f4143efd48b322d2e49d2cf32
+  - enabled: 1
+    path: Assets/Scenes/GromeStreetFastFood.unity
+    guid: 4f8c71b4b33904340800a1b622e3ae64
   m_configObjects: {}
