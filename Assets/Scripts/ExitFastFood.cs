@@ -5,15 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class ExitFastFood : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject E;
+    public bool colliderCheck;
+
+    void OnTriggerEnter2D(Collider2D col)
     {
-        
+        colliderCheck = true;
+        E.SetActive(true);
     }
 
-    // Update is called once per frame
+    void OnTriggerExit2D(Collider2D other)
+    {
+        colliderCheck = false;
+        E.SetActive(false);
+    }
+
+    void Start()
+    {
+        colliderCheck = false;
+    }
+
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.E) && colliderCheck == true)
+        {
+            SceneManager.LoadScene("GromeStreet");
+        }
     }
 }

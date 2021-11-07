@@ -12,9 +12,13 @@ public class PlayerMovement : MonoBehaviour
 
     public float runSpeed = 20.0f;
 
+    private PlayerData playerData;
+
     void Start ()
     {
         body = GetComponent<Rigidbody2D>();
+        playerData = new PlayerData();
+        playerData.health = playerData.maxHealth;
     }
 
     void Update()
@@ -26,13 +30,20 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-    if (horizontal != 0 && vertical != 0) // Check for diagonal movement
-    {
-        // limit movement speed diagonally, so you move at 70% speed
-        horizontal *= moveLimiter;
-        vertical *= moveLimiter;
-   } 
+        if (horizontal != 0 && vertical != 0) // Check for diagonal movement
+        {
+            // limit movement speed diagonally, so you move at 70% speed
+            horizontal *= moveLimiter;
+            vertical *= moveLimiter;
+        } 
 
-   body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+    body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+    }
+
+    public void GainHealth(int amount)
+    {
+        playerData.health += amount;
+        playerData.health = Mathf.Min(playerData.health, playerData.maxHealth);
+        Debug.Log("HealthStat");
     }
 }

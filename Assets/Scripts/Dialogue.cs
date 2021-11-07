@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
     private int index;
+    private Coroutine dialogueText;
     public DialogueTrigger dialogueTrigger;
     public float typingSpeed;
     public GameObject continueButton;
     public GameObject dialoguePanel;
+    public UnityEvent onEndDialogue;
 
     void Start()
     {
-        StartCoroutine(Type());
+        //dialogueText = StartCoroutine(Type());
     }
 
     void Update()
@@ -49,8 +52,9 @@ public class Dialogue : MonoBehaviour
         if(index == sentences.Length - 1)
         {
             GameObject.FindWithTag("Dialogue").gameObject.SetActive(false);
-            //print("Works");
+            //Debug.Log("Works");
             index = 0;
+            onEndDialogue.Invoke();
             return;
         }
         
@@ -58,12 +62,18 @@ public class Dialogue : MonoBehaviour
         {
             index++;
             textDisplay.text = "";
-            StartCoroutine(Type());
+            if(dialogueText != null)
+            {
+                StopCoroutine(dialogueText);
+            }
+
+            dialogueText = StartCoroutine(Type());
         }
 
         else
         {
             textDisplay.text = "";
+            //onEndDialogue.Invoke();
         }
     }
 }
