@@ -2531,12 +2531,16 @@ MonoBehaviour:
   textDisplay: {fileID: 1917057863}
   sentences:
   - 'Lil Smoke: Holy shit! AZ my nigga!'
+  - 'Lil Smoke: Holy shit! AZ my nigga!'
   - 'Lil Smoke: Sup fool? How does it feel to be back home?'
   - 'Lil Smoke: A lot has changed since you were gone.'
   dialogueTrigger: {fileID: 1411214430}
   typingSpeed: 0
   continueButton: {fileID: 461281464}
   dialoguePanel: {fileID: 355947852}
+  onEndDialogue:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1545532812
 GameObject:
   m_ObjectHideFlags: 0
