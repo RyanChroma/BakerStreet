@@ -209,6 +209,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 254745104953291367, guid: 4feb12428e7f00d42af9583040d25f17, type: 3}
+      propertyPath: sceneCamera
+      value: 
+      objectReference: {fileID: 1350247276}
     - target: {fileID: 254745104953291369, guid: 4feb12428e7f00d42af9583040d25f17, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -259,6 +263,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4feb12428e7f00d42af9583040d25f17, type: 3}
+--- !u!1 &105102985 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 254745104953291371, guid: 4feb12428e7f00d42af9583040d25f17, type: 3}
+  m_PrefabInstance: {fileID: 105102984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &105102986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105102985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c939d275b7d92943a01b4a5f4b79543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 2547434133602519910, guid: 73436b62cebc0b94bb9fc70a4c259242, type: 3}
+  bulletForce: 20
 --- !u!1 &120262608
 GameObject:
   m_ObjectHideFlags: 0

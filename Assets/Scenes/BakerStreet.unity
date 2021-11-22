@@ -11357,6 +11357,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 254745104953291367, guid: 4feb12428e7f00d42af9583040d25f17, type: 3}
+      propertyPath: sceneCamera
+      value: 
+      objectReference: {fileID: 2103140794}
     - target: {fileID: 254745104953291368, guid: 4feb12428e7f00d42af9583040d25f17, type: 3}
       propertyPath: m_Color.b
       value: 0
