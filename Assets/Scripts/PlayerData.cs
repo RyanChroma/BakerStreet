@@ -8,5 +8,4 @@ public class PlayerData : ScriptableObject
     [SerializeField] public float health;
 	[SerializeField] public float maxHealth;
 
-    
 }

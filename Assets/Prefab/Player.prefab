@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 254745104953291367}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,9 +135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb61d79ba27cd414b907cd833dee0a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
   runSpeed: 10
   playerData: {fileID: 11400000, guid: d9938a750958de141ba495da22510fd0, type: 2}
   healthBar: {fileID: 588397078}
+  sceneCamera: {fileID: 0}
 --- !u!1001 &305513751140819745
 PrefabInstance:
   m_ObjectHideFlags: 0

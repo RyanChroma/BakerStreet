@@ -3,7 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerMovement : MonoBehaviour
+public class Character : MonoBehaviour
+{
+    [SerializeField] public float health;
+	[SerializeField] public float maxHealth;
+
+    public virtual void GainHealth(int amount)
+    {
+        health += amount;
+        health = Mathf.Min(health, maxHealth);
+    }
+}
+
+public class PlayerMovement : Character
 {
     Rigidbody2D body;
 
@@ -16,13 +28,25 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PlayerData playerData;
     [SerializeField] private Image healthBar;
     [SerializeField] Camera sceneCamera;
-    
+    public static PlayerMovement instance;
     Vector2 mousePosition;
+
+    void Awake()
+    {
+        if(instance != null)
+        {
+            Destroy(instance.gameObject);
+        }
+
+        instance = this;
+    }
+
     void Start ()
     {
         body = GetComponent<Rigidbody2D>();
-        playerData.health = (float)playerData.maxHealth / 2;
+        //playerData.health = (float)playerData.maxHealth / 2;
         Debug.Log("Health" + playerData.health);
+        health = playerData.health;
         UpdateHealthBar();
     }
 
@@ -52,16 +76,19 @@ public class PlayerMovement : MonoBehaviour
         //body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
 
-    public void GainHealth(int amount)
+    public override void GainHealth(int amount)
     {
-        playerData.health += amount;
-        playerData.health = Mathf.Min(playerData.health, playerData.maxHealth);
-        Debug.Log("HealthStat");
+        base.GainHealth(amount);
+        playerData.health = health;
         UpdateHealthBar();
+        if(health <= 0)
+        {
+            SceneChange.ForceChangeScene("Wasted");
+        }
     }
 
     private void UpdateHealthBar()
     {
-        healthBar.fillAmount = (float)playerData.health / playerData.maxHealth;
+        healthBar.fillAmount = (float)health / maxHealth;
     }
 }

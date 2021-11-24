@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GromeStreetFastFood.unity
     guid: 4f8c71b4b33904340800a1b622e3ae64
+  - enabled: 1
+    path: Assets/Scenes/Wasted.unity
+    guid: b0bee00ad6a89044db5f6e0755c83638
   m_configObjects: {}

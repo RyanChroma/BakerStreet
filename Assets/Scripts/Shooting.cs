@@ -21,7 +21,11 @@ public class Shooting : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        Debug.Log("Firepoint.position = " + transform.position);
+        Bullet b = bullet.GetComponent<Bullet>();
+        b.targetTag = "Enemy";
+        b.bulletDamage = 10;
+        //Debug.Log("Firepoint.position = " + transform.position);
         rb.AddForce(transform.up * bulletForce, ForceMode2D.Impulse);
+        b.sourceTag = "Player";
     }
 }

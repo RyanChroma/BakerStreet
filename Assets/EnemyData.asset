@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eff5728b7b22de349b50b96ad9466265, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: 88941ccd0f296ee43a5b3c61428cf63a, type: 3}
+  m_Name: EnemyData
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
+  enemySpeed: 5
+  attackCooldownSpeed: 2
+  bulletSpeed: 10
+  bulletDamage: 10

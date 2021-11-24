@@ -6,8 +6,9 @@ public class SaveManager : MonoBehaviour
 {
 
     public static SaveManager instance;
+    [SerializeField] private PlayerData playerData;
 
-private void Awake()
+    private void Awake()
 	{
 		if (instance != null)
 		{
@@ -17,19 +18,9 @@ private void Awake()
 		instance = this;
 	}
 
-    public void SaveGame()
+    public void ResetData()
     {
-        
+        playerData.health = playerData.maxHealth;
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

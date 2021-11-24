@@ -17,6 +17,15 @@ public class SceneChange : MonoBehaviour
 		SceneManager.LoadScene (sceneName);
 	}
 
+	public static void ForceChangeScene(string sceneName)
+	{
+		if(Time.timeScale == 0)
+		{
+			Time.timeScale = 1;
+		}
+		SceneManager.LoadScene (sceneName);
+	}
+
 	public void Resume()
     {
         travelMenuUI.SetActive(false);
