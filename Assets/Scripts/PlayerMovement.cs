@@ -56,6 +56,11 @@ public class PlayerMovement : Character
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
         mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            health += 100;
+        }
     }
 
     void FixedUpdate()
